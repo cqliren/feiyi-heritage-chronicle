@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非遗观察 | Heritage Chronicle</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang SC","Microsoft Yahei",sans-serif;}
+        body{background:#f8f9fa;color:#333;line-height:1.6;}
+        .container{max-width:1200px;margin:0 auto;padding:16px;}
+        header{background:#2c3e50;color:#fff;padding:20px 16px;text-align:center;border-radius:0 0 12px 12px;}
+        header h1{font-size:22px;margin-bottom:6px;}
+        header p{opacity:0.8;font-size:14px;}
+        .switch-bar{display:flex;justify-content:center;gap:12px;margin:20px 0;}
+        .switch-btn{padding:8px 20px;border-radius:20px;border:none;cursor:pointer;font-size:14px;}
+        .btn-active{background:#2c3e50;color:#fff;}
+        .btn-normal{background:#eee;color:#333;}
+        .search-box{width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:30px;margin-bottom:20px;outline:none;}
+        .category-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+        .category-item{padding:6px 14px;border-radius:16px;border:1px solid #2c3e50;color:#2c3e50;font-size:13px;cursor:pointer;}
+        .category-item.active{background:#2c3e50;color:#fff;}
+        .card-list{display:grid;grid-template-columns:1fr;gap:16px;}
+        .card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 2px 12px #00000010;}
+        .card h3{font-size:16px;margin-bottom:8px;color:#2c3e50;}
+        .card-info{font-size:12px;color:#666;margin-bottom:10px;}
+        .card-desc{font-size:14px;color:#555;margin-bottom:12px;}
+        .card-link{font-size:13px;color:#3498db;text-decoration:none;}
+        @media (min-width:768px){
+            .card-list{grid-template-columns:1fr 1fr;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>非遗观察 Heritage Chronicle</h1>
+        <p>非遗传播纪实 · 文化观察存档平台</p>
+    </header>
+    <div class="container">
+        <div class="switch-bar">
+            <button class="switch-btn btn-active" onclick="switchView('public')">非遗视界</button>
+            <button class="switch-btn btn-normal" onclick="switchView('case')">案例资料库</button>
+        </div>
+        <input class="search-box" id="searchInput" placeholder="搜索非遗专题、传播案例..." onkeyup="searchCase()">
+        <div class="category-wrap" id="categoryWrap"></div>
+        <div class="card-list" id="cardList"></div>
+    </div>
+    <script src="switch.js"></script>
+</body>
+</html>
